@@ -71,7 +71,7 @@ resource "aws_instance" "k8s_nodes" {
 
   lifecycle {
     ignore_changes = [
-      "ami",
+      ami,
     ]
   }
 }

@@ -1,8 +1,8 @@
 data "aws_caller_identity" "self" {}
 data "aws_region" "current" {}
 data "aws_ami" "ubuntu-2004" {
-  most_recent      = true
-  owners           = ["099720109477"]
+  most_recent = true
+  owners      = ["099720109477"]
 
   filter {
     name   = "name"
@@ -17,5 +17,10 @@ data "aws_ami" "ubuntu-2004" {
   filter {
     name   = "virtualization-type"
     values = ["hvm"]
+  }
+
+  filter {
+    name   = "architecture"
+    values = ["x86_64"]
   }
 }
